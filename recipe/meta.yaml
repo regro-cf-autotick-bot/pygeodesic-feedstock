@@ -13,11 +13,12 @@ source:
 
 build:
   script: {{ PYTHON }} -m pip install . -vv
-  number: 2
+  number: 3
 
 requirements:
   build:
     - {{ compiler('cxx') }}
+    - {{ stdlib("c") }}
     - {{ stdlib("c") }}
   host:
     - cython >=3
@@ -27,7 +28,6 @@ requirements:
     - setuptools >=42
     - wheel >=0.33.0
   run:
-    - {{ pin_compatible('numpy') }}
     - python
 
 test:
