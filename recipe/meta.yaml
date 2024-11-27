@@ -1,19 +1,19 @@
 {% set name = "pygeodesic" %}
-{% set version = "0.1.8" %}
+{% set version = "0.1.11" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pygeodesic-{{ version }}.tar.gz
-  sha256: 56b73149ad15fdb88cab905486c178cb3a918f59fa2eb65705a19e22644573b8
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pygeodesic-{{ version }}.tar.gz
+  sha256: a9b54eb20d57f5499d8b2a4a67ece675a44c6fc8d00b11e8c14c8c99edeee5ed
   patches:
     - ptr.patch
 
 build:
   script: {{ PYTHON }} -m pip install . -vv
-  number: 3
+  number: 0
 
 requirements:
   build:
